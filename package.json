@@ -1,0 +1,29 @@
+{
+  "name": "name",
+  "version": "0.0.1",
+  "type": "module",
+  "description": "",
+  "source": "src/index.ts",
+  "main": "dist/index.cjs",
+  "scripts": {
+    "build": "microbundle",
+    "dev": "run-p microbundle:watch dev:vitest",
+    "microbundle:watch": "microbundle watch ",
+    "test": "vitest run",
+    "dev:vitest": "vitest run --watch",
+    "coverage": "vitest run --coverage"
+  },
+  "module": "./dist/foo.module.js",
+  "unpkg": "./dist/foo.umd.js",
+  "exports": {
+    "require": "./dist/index.cjs",
+    "default": "./dist/index.modern.js"
+  },
+  "author": "Franz Sittampalam",
+  "license": "ISC",
+  "devDependencies": {
+    "microbundle": "^0.14.2",
+    "npm-run-all": "^4.1.5",
+    "vitest": "^0.10.0"
+  }
+}
